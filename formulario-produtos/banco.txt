@@ -1,0 +1,17 @@
+CREATE DATABASE formulario_produtos;
+
+use formulario_produtos;
+
+create table produtos
+(
+    id_produto int AUTO_INCREMENT PRIMARY key,
+    c varchar(100),
+    descricao text
+);
+
+create table imagens(
+	id_imagem int AUTO_INCREMENT PRIMARY key,
+    nome_imagem varchar(100),
+    fk_id_produto int,
+    FOREIGN key(fk_id_produto) REFERENCES produtos(id_produto) ON DELETE CASCADE
+);
